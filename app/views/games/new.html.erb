@@ -1,0 +1,18 @@
+
+<div class="container">
+<h1>New game</h1>
+<% @letters.each do |letter|%>
+  <%= letter %>
+<% end %>
+  <form class="row g-3 needs-validation" action="/score" method="post" data-turbo="false">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+    <div class= "mb-3">
+      <label for="validationCustom01" class="form-label">What is the longest word you can find</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="validationCustom01" name="new">
+          <input type="submit" class="btn btn-primary" type="submit" value="Play">
+        </div>
+      </div>
+  </form>
+</div>
